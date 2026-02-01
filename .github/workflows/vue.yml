@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -35,7 +37,7 @@ jobs:
 
   # ─────────────────────────────────────────
   # 2. TEST
-   # ─────────────────────────────────────────
+  # ─────────────────────────────────────────
   # test:
   #   name: Unit Tests
   #   runs-on: ubuntu-latest
@@ -113,26 +115,26 @@ jobs:
   #         name: vue-dist
   #         path: dist/
 
-      # ── Option A: Deploy to Vercel ──────────────
-      # - name: Deploy to Vercel
-      #   uses: amondpie/vercel-action@master
-      #   with:
-      #     token: ${{ secrets.VERCEL_TOKEN }}
-      #     org: ${{ secrets.VERCEL_ORG_ID }}
-      #     project: ${{ secrets.VERCEL_PROJECT_ID }}
+  # ── Option A: Deploy to Vercel ──────────────
+  # - name: Deploy to Vercel
+  #   uses: amondpie/vercel-action@master
+  #   with:
+  #     token: ${{ secrets.VERCEL_TOKEN }}
+  #     org: ${{ secrets.VERCEL_ORG_ID }}
+  #     project: ${{ secrets.VERCEL_PROJECT_ID }}
 
-      # ── Option B: Deploy to Netlify ─────────────
-      # - name: Deploy to Netlify
-      #   uses: netlify/actions/deploy@master
-      #   with:
-      #     publish-dir: ./dist
-      #     netlify-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      #     netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
-      #     production-deploy: true
+  # ── Option B: Deploy to Netlify ─────────────
+  # - name: Deploy to Netlify
+  #   uses: netlify/actions/deploy@master
+  #   with:
+  #     publish-dir: ./dist
+  #     netlify-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+  #     netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+  #     production-deploy: true
 
-      # ── Option C: Deploy to GitHub Pages ────────
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./dist
+  # ── Option C: Deploy to GitHub Pages ────────
+  # - name: Deploy to GitHub Pages
+  #   uses: peaceiris/actions-gh-pages@v3
+  #   with:
+  #     github_token: ${{ secrets.GITHUB_TOKEN }}
+  #     publish_dir: ./dist
