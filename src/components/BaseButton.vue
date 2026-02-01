@@ -1,37 +1,37 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed } from 'vue'
 
-type ButtonVariant = "primary" | "outline" | "ghost";
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonVariant = 'primary' | 'outline' | 'ghost'
+type ButtonSize = 'sm' | 'md' | 'lg'
 
 type Props = {
-  label?: string;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  disabled?: boolean;
-  type?: "button" | "submit" | "reset";
-};
+  label?: string
+  variant?: ButtonVariant
+  size?: ButtonSize
+  disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
+}
 
 const props = withDefaults(defineProps<Props>(), {
-  label: "Button",
-  variant: "primary",
-  size: "md",
+  label: 'Button',
+  variant: 'primary',
+  size: 'md',
   disabled: false,
-  type: "button",
-});
+  type: 'button',
+})
 
-const emit = defineEmits<{ (e: "click", event: MouseEvent): void }>();
+const emit = defineEmits<{ (e: 'click', event: MouseEvent): void }>()
 
 const classes = computed(() => [
-  "btn",
+  'btn',
   `btn--${props.variant}`,
   `btn--${props.size}`,
-  props.disabled ? "is-disabled" : null,
-]);
+  props.disabled ? 'is-disabled' : null,
+])
 
 function onClick(event: MouseEvent) {
-  if (props.disabled) return;
-  emit("click", event);
+  if (props.disabled) return
+  emit('click', event)
 }
 </script>
 
@@ -51,13 +51,16 @@ function onClick(event: MouseEvent) {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 3px solid var(--btn-border);
+  border: 2px solid var(--btn-border);
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-weight: 600;
   border-radius: 999px;
   cursor: pointer;
-  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background 120ms ease;
 }
 
 .btn:focus-visible {
