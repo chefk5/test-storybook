@@ -51,7 +51,7 @@ function onClick(event: MouseEvent) {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 1px solid var(--btn-border);
+  border: 3px solid var(--btn-border);
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-weight: 600;
