@@ -43,8 +43,8 @@ function onClick(event: MouseEvent) {
 
 <style scoped>
 .btn {
-  --btn-bg: #0f172a;
-  --btn-fg: #ffffff;
+  --btn-bg: #1053f0;
+  --btn-fg: #e41616;
   --btn-border: #0f172a;
 
   display: inline-flex;
