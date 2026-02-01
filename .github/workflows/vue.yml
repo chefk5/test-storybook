@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: Run Chromatic
-        uses: chromaui/action@latest
+        uses: chromaui/action@11
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
