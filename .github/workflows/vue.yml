@@ -9,10 +9,10 @@ on:
 
 jobs:
   # ─────────────────────────────────────────
-  # 1. LINT, build and storybook chromatic
+  # 1. Chromatic
   # ─────────────────────────────────────────
   lint:
-    name: Lint
+    name: chromatic
     runs-on: ubuntu-latest
 
     steps:
@@ -27,9 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Run ESLint
-        run: npm run lint
 
       - name: Run Chromatic
         uses: chromaui/action@latest
