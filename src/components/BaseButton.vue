@@ -43,9 +43,9 @@ function onClick(event: MouseEvent) {
 
 <style scoped>
 .btn {
-  --btn-bg: #1053f0;
+  --btn-bg: #10f01b;
   --btn-fg: #e41616;
-  --btn-border: #0f172a;
+  --btn-border: #ec28d5;
 
   display: inline-flex;
   align-items: center;
